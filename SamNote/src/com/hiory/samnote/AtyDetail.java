@@ -38,8 +38,8 @@ public class AtyDetail extends Activity {
 	private void init() {
 
 		new TitleBuilder(this)
-		.setTitleText("记事本")
-		.setRightText("保存")
+		.setTitleText("NoteBook")
+		.setRightText("Save")
 		.setRightOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -47,7 +47,7 @@ public class AtyDetail extends Activity {
 				String title=titleView.getText().toString();
 				String content=contentView.getText().toString();
 				if(title.equals("") || content.equals("")){
-					Toast.makeText(AtyDetail.this, "标题或内容为空", Toast.LENGTH_SHORT).show();
+					Toast.makeText(AtyDetail.this, "Title or content is Enpty", Toast.LENGTH_SHORT).show();
 				}else {
 					
 					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -59,13 +59,13 @@ public class AtyDetail extends Activity {
 					DBNotes db=new DBNotes(AtyDetail.this);
 					db.addNote(note);
 					System.out.println("保存成功LL");
-					Toast.makeText(AtyDetail.this, "记录保存成功", Toast.LENGTH_SHORT).show();
+					Toast.makeText(AtyDetail.this, "Save Successfully", Toast.LENGTH_SHORT).show();
 					AtyDetail.this.finish();
 					startActivity(new Intent(AtyDetail.this,AtyNotelist.class));
 				}
 				
 			}
-		}).setLeftText("返回").setLeftOnClickListener(new OnClickListener() {
+		}).setLeftText("Return").setLeftOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {

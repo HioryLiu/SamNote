@@ -26,7 +26,7 @@ public class AtyNotelist extends Activity implements OnItemClickListener{
         init();
 //        DBNotes db1=new DBNotes(this);
 //        db1.DeleteAll();
-//        System.out.println("删除完成");
+//        System.out.println("deleteCompleted");
         
         DBNotes db=new DBNotes(this);
        List<Notes> notes= db.getNotes();
@@ -45,8 +45,8 @@ public class AtyNotelist extends Activity implements OnItemClickListener{
 		
 		
 		new TitleBuilder(this)
-		.setTitleText("记事本")
-		.setRightText("添加")
+		.setTitleText("NoteBook")
+		.setRightText("Add")
 		.setRightOnClickListener(new OnClickListener() {
 			
 			@Override
